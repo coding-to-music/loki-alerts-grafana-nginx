@@ -1,4 +1,33 @@
+# loki-alerts-grafana-nginx
+
+# 🚀 Alerting with Loki v2 on Docker Example 🚀
+
+https://github.com/coding-to-music/loki-alerts-grafana-nginx
+
+From / By Ruan Bekker https://github.com/ruanbekker/loki-alerts-docker
+
+https://github.com/ruanbekker/loki-alerts-docker
+
+## Environment variables:
+
+```java
+
+```
+
+## GitHub
+
+```java
+git init
+git add .
+git remote remove origin
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:coding-to-music/loki-alerts-grafana-nginx.git
+git push -u origin main
+```
+
 # loki-alerts-docker
+
 Alerting with Loki v2 on Docker Example
 
 ## Usage
@@ -22,6 +51,5 @@ $ docker-compose up -d
 ```
 
 Then follow the [blogpost](https://blog.ruanbekker.com/blog/2020/11/06/how-to-setup-alerting-with-loki/):
+
 - https://blog.ruanbekker.com/blog/2020/11/06/how-to-setup-alerting-with-loki/
-
-

@@ -1,0 +1,21 @@
+{
+  "name": "loki-alerts-grafana-nginx",
+  "version": "1.0.0",
+  "description": "Alerting with Loki v2 on Docker Example",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "git add . && git commit -m Build && git push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruanbekker/loki-alerts-docker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruanbekker/loki-alerts-docker/issues"
+  },
+  "homepage": "https://github.com/ruanbekker/loki-alerts-docker#readme"
+}
