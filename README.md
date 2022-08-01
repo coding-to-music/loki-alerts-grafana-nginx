@@ -30,7 +30,7 @@ git push -u origin main
 
 ## Results:
 
-Grafana http://localhost:3000
+Grafana http://localhost:3000 (there is no dashboard) import 13639 
 
 loki http://localhost:3100
 
