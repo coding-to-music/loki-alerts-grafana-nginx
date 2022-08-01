@@ -5,8 +5,8 @@ services:
     image: prom/alertmanager
     container_name: alertmanager
     command:
-      - '--config.file=/etc/alertmanager/config.yml'
-      - '--storage.path=/alertmanager'
+      - "--config.file=/etc/alertmanager/config.yml"
+      - "--storage.path=/alertmanager"
     volumes:
       - ./config/alertmanager.yml:/etc/alertmanager/config.yml
     ports:
@@ -15,29 +15,34 @@ services:
       - public
 
   loki:
-   image: grafana/loki:2.0.0-amd64
-   container_name: loki
-   volumes:
-     - ./config/loki.yml:/etc/config/loki.yml
-     - ./rules/demo/rules.yml:/etc/loki/rules/fake/rules.yml
-   entrypoint:
-     - /usr/bin/loki
-     - -config.file=/etc/config/loki.yml
-   ports:
-     - "3100:3100"
-   depends_on:
-     - alertmanager
-   networks:
+    image: grafana/loki:2.0.0-amd64
+    container_name: loki
+    volumes:
+      - ./config/loki.yml:/etc/config/loki.yml
+      - ./rules/demo/rules.yml:/etc/loki/rules/fake/rules.yml
+    entrypoint:
+      - /usr/bin/loki
+      - -config.file=/etc/config/loki.yml
+    ports:
+      - "3100:3100"
+    depends_on:
+      - alertmanager
+    networks:
       - public
 
   grafana:
-    image: grafana/grafana:7.2.2
+    # image: grafana/grafana:7.2.2
+    image: grafana/grafana:latest
     container_name: grafana
     volumes:
       - ./config/datasource.yml:/etc/grafana/provisioning/datasources/datasource.yml
       - grafana:/var/lib/grafana
     ports:
       - "3000:3000"
+    environment:
+      - GF_AUTH_ANONYMOUS_ORG_ROLE=Admin
+      - GF_AUTH_ANONYMOUS_ENABLED=true
+      - GF_AUTH_BASIC_ENABLED=false
     depends_on:
       - loki
     networks:
