@@ -40,6 +40,8 @@ nginx Webserver http://localhost:80
 
 http-client calls nginx Webserver constantly
 
+alerts go to slack
+
 # loki-alerts-docker
 
 Alerting with Loki v2 on Docker Example
